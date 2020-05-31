@@ -479,7 +479,7 @@ function parseAddURL(){
   var checkGate;
   if(format.test(parent_gateid)){
     window.location.href = '/error';
-  } else if(parent_gateid.localeCompare(0)){
+  } else if(parent_gateid.localeCompare("0")){
     document.getElementById("parent_id_gate_input").value= parent_gateid;
   } else {
     checkGate = objects_cal_array.find(item => item.parent == parent_gateid);
