@@ -1,4 +1,5 @@
 //middleware of app
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const createError = require('http-errors');
@@ -11,8 +12,7 @@ var logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-
-
+const port = process.env.PORT || 3000;
 
 app.use(favicon(path.join(__dirname,'public','images','icon.png')));
 app.engine('handlebars', expbs({
@@ -49,8 +49,6 @@ app.use(function(req,res){
     res.status(404).render('error.handlebars');
 });
 //app listening
-app.listen(3000, function () {
-	console.log('Express app listening on port 3000');
-});
 
 module.exports = app;
+app.listen(port);
