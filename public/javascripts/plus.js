@@ -474,6 +474,9 @@ function parseAddURL(){
   //parse url to add parent id of gate to form
   var objects_cal_array = JSON.parse(sessionStorage.getItem("pole"));
   const product = new URLSearchParams(queryString);
+  if(product.get('parent_gateid') == 0){
+    console.log("jee");
+  }
   var parent_gateid = new String(product.get('parent_gateid'));
   var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
   var checkGate;
