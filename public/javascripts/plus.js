@@ -474,25 +474,25 @@ function parseAddURL(){
   //parse url to add parent id of gate to form
   var objects_cal_array = JSON.parse(sessionStorage.getItem("pole"));
   const product = new URLSearchParams(queryString);
-  if(product.get('parent_gateid') == 0){
-    console.log("jee");
-  }
-  var parent_gateid = new String(product.get('parent_gateid'));
+  var number = product.get('parent_gateid');
+  var parent_gateid = new String(number);
   var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
   var checkGate;
   if(format.test(parent_gateid)){
     console.log("tadyyy");
     window.location.href = '/error';
-  } else if(parent_gateid.localeCompare("0")){
-    document.getElementById("parent_id_gate_input").value= parent_gateid;
   } else {
-    checkGate = objects_cal_array.find(item => item.parent == parent_gateid);
-    if(checkGate == undefined){
-      console.log("tuu");
-      window.location.href = '/error';
-    } else {
+    if(number == 0){
       document.getElementById("parent_id_gate_input").value= parent_gateid;
-    }
+    } else{ 
+      checkGate = objects_cal_array.find(item => item.parent == parent_gateid);
+      if(checkGate == undefined){
+        console.log("tuu");
+        window.location.href = '/error';
+      } else {
+        document.getElementById("parent_id_gate_input").value= parent_gateid;
+      }
+   }
   }
 }
 
