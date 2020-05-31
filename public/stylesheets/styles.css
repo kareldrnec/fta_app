@@ -1,0 +1,177 @@
+.pdf-viewer {
+  width: 100%; 
+  height: 40vw;
+}
+.main-form {
+  width: 20vw;
+  margin: auto;
+}
+#kn_values {
+  margin: auto;
+  width: 10vw;
+  display: none;
+}
+#constant_values {
+  margin: auto;
+  display: none;
+}
+#latent_values {
+  margin: auto;
+  display: none;
+}
+.about-info {
+    margin: auto;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    text-align: justify;    
+}
+.login-thing {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.popup{
+  background: rgb(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.popup2{
+  background: rgb(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.popup_content {
+  background: whitesmoke;
+  padding: 10px;
+  bottom: 10%;
+  border-radius: 5px;
+  position: relative;
+}
+.popup_content_login {
+  height: 350px;
+  width: 600px;
+  background: whitesmoke;
+  padding: 10px;
+  bottom: 10%;
+  border-radius: 5px;
+  position: relative;
+}
+#popup_content_analysis {
+  height: 450px;
+  width: 600px;
+}
+#popup_content_export {
+  height: 150px;
+  width: 250px;
+}
+.close {
+  position: absolute;
+  top: -23px;
+  right: -23px;
+  background: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+.close_export {
+  position: absolute;
+  top: -23px;
+  right: -23px;
+  background: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+#buttonDownload {
+  display: none;
+}
+
+#main-content{
+   width: 100vw;
+   height: 45vw;
+   margin: auto;
+}
+body {
+  background-color: rgba(255, 255, 255, 0.801);
+}
+
+@media screen and (max-width: 2000px){
+  #main-content {
+    height: 48vw;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .main-form {
+    width: 60vw;
+  }
+  .help-options {
+    width: 70vw;
+    margin: auto;
+  }
+  .pdf-viewer {
+    width: 50vw;
+    height: 70vw;
+  }
+  .about-info {
+    margin: auto;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 20vw;
+    display: inline-block;    
+  }
+  #kn_values {
+    width: 50vw;
+  }
+  .pdf-viewer {
+    display: none;
+  }
+  #buttonDownload {
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+  }
+  #main-content {
+    height: 42vw;
+  }
+  #input-files {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px){
+  #main-content {
+    height: 150vw;
+  }
+}
+@media screen and (max-width: 400px){
+  #main-content {
+    height: 150vw;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 1024px){
+  #main-content {
+    height: 120vw;
+  }
+
+}
+

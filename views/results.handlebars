@@ -1,0 +1,19 @@
+{{> navbar}}
+<div id="main-content" style="width: 95vw; height: 45vw; margin: auto;">
+<select name="result_select" id="result_select" style="margin-top: 5px" class="form-control" onchange="result_select_change()">
+</select>
+<select name="values_type_select" id="values_type_select" style="margin-top: 5px" class="form-control" onchange="values_type_change()">
+</select>
+<a id="download-graph"
+        download="GraphResult.jpg" 
+        href=""
+        style="margin-top: 5px"
+        class="btn btn-primary float-right bg-flat-color-1"
+        title="Download a graph">
+ <i class="fa fa-download"></i>
+</a>
+    <canvas id="results-graph" style="margin-bottom: 30px"></canvas>
+</div>
+<script>
+    fillResultSelect();
+</script>

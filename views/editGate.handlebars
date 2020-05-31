@@ -1,0 +1,30 @@
+{{> navbar}}
+<form action="/gates/editGate/{{tGate._id}}" method="POST" class="main-form">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value='{{tGate.name}}' pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" class="form-control" placeholder="Name...">
+    <label for="gate_type">Gate Type</label>
+    <select name="gate_type" id="gate_type" class="form-control" onchange="showValuesKN()">
+        <option value="AND" data-toggle="tooltip" data-placement="top" title="Tooltip on top">AND</option>
+        <option value="OR" data-toggle="tooltip" data-placement="top" title="Tooltip on top">OR</option>
+        <option value="K/N" data-toggle="tooltip" data-placement="top" title="Tooltip on top">K/N</option>
+    </select>
+    <div class="form-row" id="kn_values">
+        <div class="col-5">
+            <label for="k_value">K:</label>
+            <input type="number" name="number" min="0" max="10" value="0" id="k_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        </div>
+        <div class="col-5">
+            <label for="n_value">N:</label>
+            <input type="number" name="number" value="0" id="n_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top" disabled>
+        </div>   
+    </div>
+    <label for="description">Description</label>
+    <textarea class="form-control" name="description" id="description_area" rows="5" placeholder="Description..." style="resize: none;" onkeyup="valid(this)" onblur="valid(this)">{{tGate.description}}</textarea>
+    <a href="/help" class="mt-2 d-flex justify-content-center">Help?</a>
+    <button type="submit" class="mt-2 btn btn-primary btn-block">Submit</button>
+    <input type="button" value="Back" class="btn btn-primary btn-block" onclick="history.back(-1)" />
+</form>
+<script>
+    showGateType('{{tGate._id}}','{{tGate.gateType}}', '{{tGate.number}}');
+    parseEditURL();
+</script>

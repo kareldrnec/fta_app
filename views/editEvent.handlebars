@@ -1,0 +1,64 @@
+{{> navbar}}
+<div>
+    <form action="/events/editEvent/{{tEvent._id}}" method="POST" class="main-form">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value='{{tEvent.name}}' class="form-control" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" placeholder="Name..." data-toggle="tooltip" title="Type here a name of an event.">
+        <label for="calculation_type">Calculation Type</label>
+        <select name="calculation_type" id="calculation_type" class="form-control" onchange="showEventValues()">
+            <option value="constant" data-toggle="tooltip" title="Set Constant Probiability">Constant</option>
+            <option value="lambda" data-toggle="tooltip" title="Set Failure Rate">Failure Rate(λ)</option>
+            <option value="mtbf" data-toggle="tooltip" title="Set MTBF">MTBF</option>
+            <option value="lambda_mi" data-toggle="tooltip" title="Set Failure Rate and Repair Rate">Failure Rate(λ) and Repair Rate(µ)</option>
+            <option value="mtbf_mttr" data-toggle="tooltip" title="Set MTBF and MTTR">MTBF and MTTR</option>
+        </select>
+        <div class="form-row" id="constant_number_form" style="display: none;">
+            <div class="col-5">
+                <label for="constantP">P:</label>
+                <input type="number" name="p_number" step="0.000001" min="0" max="1" value="0" id="p_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top" required>
+            </div>  
+        </div>
+        <div class="form-row" id="lambda_number_form" style="display: none;">
+            <div class="col-5">
+                <label for="lambda_number">λ:</label>
+                <input type="number" name="lambda_number" step="0.000001" min="0" max="1" value="0" id="lambda_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top" required>
+            </div>  
+        </div>
+        <div class="form-row" id="mi_number_form" style="display: none;">
+            <div class="col-5">
+                <label for="mi_number">µ:</label>
+                <input type="number" name="mi_number" step="0.000001" min="0" max="1" value="0" id="mi_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top" required>
+            </div>  
+        </div>
+        <div class="form-row" id="mtbf_number_form" style="display: none;">
+            <div class="col-5">
+                <label for="mtbf_number">MTBF:</label>
+                <input type="number" name="mtbf_number" value="0" min="0" step="any" id="mtbf_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top" required>
+                <div id="input-files">
+                    <label for="input-file-mtbf">Select a file:</label><br>
+                    <input type="file" id="input-file-mtbf">
+                </div>
+            </div>
+        </div>
+        <div class="form-row" id="mttr_number_form" style="display: none;">
+            <div class="col-5">
+                <label for="mttr_number">MTTR:</label>
+                <input type="number" name="mttr_number" value="0" min="0" step="any" id="mttr_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top" required>
+                <div id="input-files">
+                    <label for="input-file-mttr">Select a file:</label><br>
+                    <input type="file" id="input-file-mttr">
+                </div>
+            </div>   
+        </div>
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description_area" name="description" rows="5" placeholder="Description..." data-toggle="tooltip" title="Type here a description of an event." style="resize: none;" onkeyup="valid(this)" onblur="valid(this)">{{tEvent.description}}</textarea>
+        <a href="/help" class="mt-2 d-flex justify-content-center">Help?</a>
+        <button type="submit" class="mt-2 btn btn-primary btn-block">Submit</button>
+        <input type="button" value="Back" class="btn btn-primary btn-block" onclick="history.back(-1)" />
+    </form>
+</div>
+<script>
+    document.getElementById('input-file-mtbf').addEventListener('change', getFileMTBF);
+    document.getElementById('input-file-mttr').addEventListener('change', getFileMTTR);
+    showCalcType('{{tEvent.eventType}}', '{{tEvent.values}}');
+    parseEditURL();
+</script>

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navigationn">
+        <a class="navbar-brand" href="/">
+        <img src="/images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="My_Logo"> FTA
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+           <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-project-diagram"></i> Project
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="javascript:;" onclick="createTopEvent();"><i class="fas fa-file"></i> New</a>
+                    <a class="dropdown-item" href="javascript:;" onclick="generateRandomTree();"><i class="fas fa-cube"></i> Generate Random Tree</a>
+                    <a class="dropdown-item" href="javascript:;" onclick="saveResultsToTxt();"><i class="fas fa-save"></i> Save Results</a>
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header"><i class="fas fa-file-export"></i> Export To...</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="" id="svgButton"><i class="far fa-file-image"></i> SVG</a>
+                    <a class="dropdown-item" href="" id="pngButton"><i class="fas fa-file-image"></i> PNG</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-calculator"></i> Analysis
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="javascript:;" onclick="checkTreeBeforeAnalysis();"><i class="far fa-play-circle"></i> Start</a>
+                    <a class="dropdown-item" href="javascript:;" onclick="redirectToResults();"><i class="fas fa-chart-line"></i> Results</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/help"><i class="far fa-question-circle"></i> Help</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about"><i class="fas fa-info-circle"></i> About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="logout" href="/users/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

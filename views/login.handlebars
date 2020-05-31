@@ -1,0 +1,36 @@
+{{> navbar}}
+<div class="login-thing">
+  <h2>You must be logged in!</h2>
+  <button type="button" class="mt-2 btn btn-primary btn-block" id="login_button">Login</button>
+</div>
+<div class="popup">
+  <div class="popup_content_login">
+    <img src="/images/cancel_icon.png" alt="Close" class="close">
+    <img src="/images/user_login.png" alt="user_pic" width="50" height="50">
+    <form action="/users/login" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name='name' pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" aria-describedby="nameHelp" placeholder="Enter name" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name='password' pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" placeholder="Enter password" required>
+      </div>
+      <a href="/users/register" class="mt-2 d-flex justify-content-center">Don't have an account?</a>
+      <button type="submit" class="mt-2 btn btn-primary btn-block">Submit</button>
+    </form>
+  </div>
+</div>
+<script>
+  document.getElementById("login_button").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "flex";
+  })
+  document.querySelector(".close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+  })
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('error');
+  if(myParam == "Incorrect_Credential") {
+    alert("Wrong username or password! Please try to login again.");
+  }
+</script>

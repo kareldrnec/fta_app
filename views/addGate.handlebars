@@ -1,0 +1,32 @@
+{{> navbar}}
+<div> 
+    <form action="/gates/addGate" method="POST" class="main-form">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" class="form-control" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+" placeholder="Name..." required>
+        <input type="text" name="parent_id_gate_input" id="parent_id_gate_input" class="form-control" data-toggle="tooltip" readonly="true" style="display: none;">
+        <label for="gate_type">Gate Type</label>
+        <select name="gate_type" id="gate_type" class="form-control" onchange="showValuesKN()">
+            <option value="AND" data-toggle="tooltip" data-placement="top" title="Tooltip on top">AND</option>
+            <option value="OR" data-toggle="tooltip" data-placement="top" title="Tooltip on top">OR</option>
+            <option value="K/N" data-toggle="tooltip" data-placement="top" title="Tooltip on top">K/N</option>
+        </select>
+        <div class="form-row" id="kn_values">
+            <div class="col-5">
+                <label for="k_value">K:</label>
+                <input type="number" name="number" min="0" max="10" value="0" id="number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            </div>
+            <div class="col-5">
+                <label for="n_value">N:</label>
+                <input type="number" name="n_number" value="0" id="n_number" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top" disabled>
+            </div>   
+        </div>
+        <label for="description">Description</label>
+        <textarea class="form-control" name="description" id="description_area" rows="5" placeholder="Description..." style="resize: none;" onkeyup="valid(this)" onblur="valid(this)"></textarea>
+        <a href="/help" class="mt-2 d-flex justify-content-center">Help?</a>
+        <button type="submit" class="mt-2 btn btn-primary btn-block">Submit</button>
+        <input type="button" value="Back" class="btn btn-primary btn-block" onclick="history.back(-1)" />
+    </form>
+</div>
+<script>
+    parseAddURL();
+</script>

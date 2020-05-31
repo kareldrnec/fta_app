@@ -1,0 +1,34 @@
+{{> navbar}}
+<form class="main-form" action="/startAnalysis" method="POST" onsubmit="calculateAnalysis()">
+    <label for="analysis_calculation_type">Calculation Type</label>
+    <select name="analysis_calculation_type" id="analysis_calculation_type" class="form-control" title="Choose type of analysis" onchange="checkRepairableEventsForAnalysis()">
+        <option value="R" data-toggle="tooltip" data-placement="top" title="">R(t)</option>
+        <option value="F" data-toggle="tooltip" data-placement="top" title="">F(t)</option>
+        <option value="A" data-toggle="tooltip" data-placement="top" title="">A(t)</option>
+        <option value="U" data-toggle="tooltip" data-placement="top" title="">U(t)</option>
+    </select>
+    <label for="time_type">Unit</label>
+    <select name="time_type" id="time_type" class="form-control" title="Choose Time Unit">
+        <option value="seconds" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in seconds">seconds</option>
+        <option value="minutes" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in minutes">minutes</option>
+        <option value="hours" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in hours">hours</option>
+        <option value="days" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in days">days</option>
+        <option value="years" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in years">years</option>
+    </select>
+    <label for="step">Step</label>
+    <select name="time_step" id="time_step" class="form-control" title="Choose Time Step">
+        <option value="1" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in seconds">1</option>
+        <option value="5" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in minutes">5</option>
+        <option value="10" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in hours">10</option>
+        <option value="50" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in days">50</option>
+        <option value="100" data-toggle="tooltip" data-placement="top" title="Steps will be calculated in years">100</option>
+    </select>
+    <label for="time">Time</label>
+    <input type="number" name="time" id="time" min="0" class="form-control" data-toggle="tooltip" required>
+    <a href="/help" class="mt-2 d-flex justify-content-center">Help?</a>
+    <button type="submit" class="mt-2 btn btn-primary btn-block">Submit</button>
+    <input type="button" value="Back" class="btn btn-primary btn-block" onclick="history.back(-1)" />
+</form>
+<script>
+    setDefaultType();
+</script>
