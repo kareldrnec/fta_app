@@ -13,7 +13,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const port = process.env.PORT || 3000;
 
-app.use(favicon(path.join(__dirname,'public','images','icon.png')));
 app.engine('handlebars', expbs({
 	defaultLayout: 'main',
 	layoutsDir: path.join(__dirname, 'views/layouts')
