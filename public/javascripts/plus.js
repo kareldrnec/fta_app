@@ -486,6 +486,8 @@ function parseAddURL(){
       document.getElementById("parent_id_gate_input").value= parent_gateid;
     } else{ 
       checkGate = objects_cal_array.find(item => item.parent == parent_gateid);
+      console.log(checkGate);
+      alert();
       if(checkGate == undefined){
         console.log("tuu");
         window.location.href = '/error';
