@@ -673,7 +673,6 @@ function showGraph(object_result){
   var original_time = JSON.parse(sessionStorage.getItem("original_time"));
   var select = document.getElementById('values_type_select');
   var selectedValue = select.options[select.selectedIndex].value;
-  console.log(original_time[0].time_type);
   new Chart(document.getElementById("results-graph"), {
     type: 'line',
     data: {
@@ -1221,7 +1220,6 @@ function getResultsText(results_array){
   var parentObjectOfArray;
   for(var i = 0; i < results_array.length; i++){
     objectOfArray = object_array.find(item => item.key == results_array[i]._id);
-    console.log(objectOfArray);
     if(generated_diagram_array == null){
       if((objectOfArray.parent).localeCompare("") == 0){
         parent_name = ""
