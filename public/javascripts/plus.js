@@ -1209,6 +1209,7 @@ function getResultsText(results_array){
   * builds a text from results
   * results_array - JSON array of results
   */
+  var generated_diagram_array = JSON.parse(sessionStorage.getItem("generated_diagram_array"));
   var object_array = JSON.parse(sessionStorage.getItem('pole'));
   var original_time = JSON.parse(sessionStorage.getItem("original_time"));
   var text = "";
@@ -1221,11 +1222,20 @@ function getResultsText(results_array){
   for(var i = 0; i < results_array.length; i++){
     objectOfArray = object_array.find(item => item.key == results_array[i]._id);
     console.log(objectOfArray);
-    if((objectOfArray.parent).localeCompare("") == 0){
-      parent_name = ""
+    if(generated_diagram_array == null){
+      if((objectOfArray.parent).localeCompare("") == 0){
+        parent_name = ""
+      } else {
+        parentObjectOfArray = object_array.find(item => item.key == objectOfArray.parent);
+        parent_name = parentObjectOfArray.name;
+      }
     } else {
-      parentObjectOfArray = object_array.find(item => item.key == objectOfArray.parent);
-      parent_name = parentObjectOfArray.name;
+      if(((objectOfArray.parent).toString()).localeCompare("") == 0){
+        parent_name = ""
+      } else {
+        parentObjectOfArray = object_array.find(item => item.key == objectOfArray.parent);
+        parent_name = parentObjectOfArray.name;
+      }
     }
     name = objectOfArray.name;
     for(var j = 0; j < (results_array[i].values).length; j++){
