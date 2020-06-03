@@ -1220,6 +1220,7 @@ function getResultsText(results_array){
   var parentObjectOfArray;
   for(var i = 0; i < results_array.length; i++){
     objectOfArray = object_array.find(item => item.key == results_array[i]._id);
+    console.log(objectOfArray);
     if((objectOfArray.parent).localeCompare("") == 0){
       parent_name = ""
     } else {
