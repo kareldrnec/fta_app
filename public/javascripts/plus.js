@@ -418,7 +418,7 @@ function makeGateChoiceText(gateJS){
   var result_array = JSON.parse(sessionStorage.getItem("results_array"));
   var result;
   if(((gateJS.gateType).localeCompare("K/N")) == 0) {
-    text = text.concat("K/N", "\n", "K: ", gateJS.number);
+    text = text.concat("\n", "K/N", "\n", "K: ", gateJS.number);
   } else {
     text = text.concat(gateJS.gateType);
   }
