@@ -1375,5 +1375,7 @@ function makeGeneratedEventChoice(eventType, eventValue){
 }
 
 function clearStorage(){
+  // clears sessionStorage
+  sessionStorage.clear();
   window.location.href = "/users/logout";
 }
