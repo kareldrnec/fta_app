@@ -1375,5 +1375,5 @@ function makeGeneratedEventChoice(eventType, eventValue){
 }
 
 function clearStorage(){
-  windos.location.href = "/users/logout";
+  window.location.href = "/users/logout";
 }
