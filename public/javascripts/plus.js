@@ -1374,3 +1374,6 @@ function makeGeneratedEventChoice(eventType, eventValue){
   return text;
 }
 
+function clearStorage(){
+  windos.location.href = "/users/logout";
+}
