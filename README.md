@@ -12,6 +12,6 @@ Basic events have several types of input values:
   - Failure Rate (λ)
   - Repair Rate (μ)
 
-FTA application can solve several analysis and display results in numbers or graph.
-Results can be downloaded or exported.
+FTA application can solve several types of analysis and display results in numbers or graph.
+Results can be downloaded or exported into files.
 Application also contains czech manual.
