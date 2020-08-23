@@ -1,6 +1,6 @@
 **FTA_APP**
 
-This application was created as a bachelor thesis at **Technical University of Liberec** by student **Karel Drnec**. 
+This application was created as a bachelor thesis at **Technical University of Liberec** by student **Karel Drnec** in 2020. 
 
 The application works with **Fault Tree Analysis** and lets users introduce into this topic.
 
