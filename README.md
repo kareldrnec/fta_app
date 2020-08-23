@@ -3,6 +3,7 @@
 This application was created as a bachelor thesis at **Technical University of Liberec** by student **Karel Drnec**. 
 
 The application works with **Fault Tree Analysis** and lets users introduce into this topic.
+
 Users of this application can build a **Fault Tree Diagram** with:
   - basic events 
   - basic logic gates (**AND**, **OR**, **K/N** => **k-out-of-n components**)
