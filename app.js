@@ -17,7 +17,6 @@ app.engine('handlebars', expbs({
 	defaultLayout: 'main',
 	layoutsDir: path.join(__dirname, 'views/layouts')
 }));
-let mongoDBUrl = process.env.MONGODB_URI || 'mongodb+srv://user1234:user1234@cluster0-gr9ky.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(mongoDBUrl);
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
